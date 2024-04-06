@@ -117,4 +117,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Acknowledgments
 
 - Use this section to list resources you find helpful and would like to give credit to.
->>>>>>> 753e26f14069846784d41983b3f2d00ee9cfd899
