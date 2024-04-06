@@ -88,13 +88,14 @@ Visionary AI's frontend interacts with a secure backend providing two main funct
 - **Method:** POST
 - **Request Body Example:**
 
-  ```json
- {
+   ```json
+  
+    {
   "prompt": "A beautiful landscape painting",
   "modelName": "playground-v2", // Alternatives: "kandinsky-2.2"
   "aspectRatio": "16:9" // Other options: 9:16, 1:1
-}
 
+  }
   ```
 
 ## Testing
