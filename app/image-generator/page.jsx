@@ -1,7 +1,8 @@
 // app/image-generator/page.jsx
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Image from 'next/image';
 import axios from "axios";
 import { Puff } from "react-loader-spinner";
 import { Label } from "@/components/ui/label";
@@ -99,7 +100,7 @@ export default function ImageGeneratorPage() {
             <Puff color="#00BFFF" height={100} width={100} />
           ) : (
             <div onClick={toggleModal} className="cursor-pointer">
-              <img
+              <Image
                 alt="Generated Image"
                 className="aspect-square object-cover border border-gray-200 rounded-lg overflow-hidden dark:border-gray-800"
                 src={imageUrl}
@@ -121,7 +122,7 @@ export default function ImageGeneratorPage() {
               {" "}
               {/* Stop the click event from propagating to the parent div */}
               {/* The Image */}
-              <img
+              <Image
                 alt="Generated Image in full size"
                 src={imageUrl}
                 onContextMenu={(e) => e.preventDefault()}

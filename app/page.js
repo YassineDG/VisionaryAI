@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Image from 'next/image';
 import Link from "next/link";
 import Footer from "@/components/footer";
 
@@ -14,7 +14,7 @@ export default function Home() {
           <section className="w-full py-4 sm:py-8 md:py-16 lg:py-24 xl:py-36">
             <div className="container px-4 md:px-6">
               <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-                <img
+                <Image
                   alt="AI Hero"
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
                   height="550"
@@ -109,8 +109,8 @@ export default function Home() {
                       <div className="grid gap-1 bg-purple-800 p-2 rounded-md">
                         <h3 className="text-xl font-bold">Chatbot</h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                          I'm an AI, I don't have feelings. But I'm here to help
-                          you. How can I assist you today?
+                          I&apos;m an AI, I don&apos;t have feelings. But
+                          I&apos;m here to help you. How can I assist you today?
                         </p>
                       </div>
                     </li>

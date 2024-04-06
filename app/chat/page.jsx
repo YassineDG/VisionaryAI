@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from 'next/image'; 
 import axios from "axios";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { TailSpin } from "react-loader-spinner";
@@ -234,12 +235,13 @@ export default function ChatBot() {
           <div className="flex-1 p-6 flex flex-col space-y-6">
             {messages.length === 0 && (
               <div className="flex flex-col justify-center items-center space-y-6">
-                <img
-                  className="text-black"
-                  src="/visioneye.gif"
-                  alt="Welcome"
-                  style={{ height: "120px", width: "150px" }}
-                />
+                <Image
+                src="/visioneye.gif"
+                alt="Welcome"
+                width={150} // Set width as a prop
+                height={120} // Set height as a prop
+                className="text-black"
+            />
                 <h1 className="text-3xl font-semibold">
                   How can I help you today?
                 </h1>
