@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import axios from "axios";
 import { Puff } from "react-loader-spinner";
 import { Label } from "@/components/ui/label";
@@ -42,7 +42,7 @@ export default function ImageGeneratorPage() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://visionaryaibackend-production.up.railway.app/api/images/generate",
+        "https://visionaryaibackend.onrender.com/api/images/generate",
         {
           prompt,
           modelName: selectedModel,
@@ -113,26 +113,29 @@ export default function ImageGeneratorPage() {
         </section>
 
         {/* Modal for full-size image preview */}
+
         {isModalOpen && (
           <div
             className="fixed inset-0 bg-black bg-opacity-75 z-50 flex justify-center items-start pt-10"
-            onClick={toggleModal} // Add click handler here to close the modal when clicking outside the image
+            onClick={toggleModal} // Closes the modal when clicking outside
           >
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="relative w-full h-[90vh] p-10"
+              onClick={(e) => e.stopPropagation()}
+            >
               {" "}
-              {/* Stop the click event from propagating to the parent div */}
-              {/* The Image */}
+              {/* Container that restricts image size */}
               <Image
                 alt="Generated Image in full size"
                 src={imageUrl}
-                onContextMenu={(e) => e.preventDefault()}
-                className="max-w-full max-h-full rounded-lg"
-                style={{ maxHeight: "90vh" }} // Ensures the image fits within the viewport
+                layout="fill" // Image will fill this container
+                objectFit="contain" // Keeps the aspect ratio and makes sure the image fits within the element
+                className="rounded-lg"
+                onContextMenu={(e) => e.preventDefault()} // Prevent right-click to save image
               />
-              {/* Close Button */}
               <button
                 onClick={toggleModal}
-                className="absolute right-10 top-10 text-white bg-black p-2 rounded-full hover:bg-opacity-80 focus:outline-none focus:ring z-50"
+                className="absolute right-10 top-1 text-white bg-black p-2 rounded-full hover:bg-opacity-80 focus:outline-none focus:ring z-50"
                 style={{ boxShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
               >
                 &times; {/* Larger 'X' character for visibility */}
@@ -173,10 +176,13 @@ export default function ImageGeneratorPage() {
                 onValueChange={setSelectedModel}
               >
                 <DropdownMenuRadioItem value="playground-v2">
-                  Playground V2
+                  Playground V2 (Default)
                 </DropdownMenuRadioItem>
                 <DropdownMenuRadioItem value="kandinsky-2.2">
                   Kandinsky 2.2
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="dreamshaper-xl-turbo">
+                  Dreamshaper XL Turbo
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>

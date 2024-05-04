@@ -62,11 +62,11 @@ Welcome to Visionary AI, an interactive platform designed to explore the capabil
 
 Visionary AI's frontend interacts with a secure backend providing two main functionalities:
 
-**API Base URL**: https://visionaryaibackend-production.up.railway.app
+**API Base URL**: https://visionaryaibackend.onrender.com/
 
 ### Chatbot API
 
-- **Endpoint:** `https://visionaryaibackend-production.up.railway.app/api/chat/generate`
+- **Endpoint:** `https://visionaryaibackend.onrender.com/api/chat/generate`
 - **Method:** POST
 - **Request Body Example:**
 
@@ -84,7 +84,7 @@ Visionary AI's frontend interacts with a secure backend providing two main funct
 
 ### Image Generation API
 
-- **Endpoint:** `https://visionaryaibackend-production.up.railway.app/api/images/generate`
+- **Endpoint:** `https://visionaryaibackend.onrender.com/api/images/generate`
 - **Method:** POST
 - **Request Body Example:**
 

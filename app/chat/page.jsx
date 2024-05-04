@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from 'next/image'; 
+import Image from "next/image";
 import axios from "axios";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { TailSpin } from "react-loader-spinner";
@@ -20,7 +20,7 @@ import { Header } from "@/components/header";
 
 export default function ChatBot() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  const [selectedModel, setSelectedModel] = useState("llama-2-70b-chat");
+  const [selectedModel, setSelectedModel] = useState("llama-3-70b-chat");
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -83,7 +83,7 @@ export default function ChatBot() {
 
     try {
       const response = await axios.post(
-        "https://visionaryaibackend-production.up.railway.app/api/chat/generate",
+        "https://visionaryaibackend.onrender.com/api/chat/generate",
         backendPayload
       );
       const botResponseText = response.data;
@@ -223,12 +223,11 @@ export default function ChatBot() {
                 <SelectValue placeholder="Select a model" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="llama-2-70b-chat">
-                  Llama-2-70b-chat
-                </SelectItem>
+                <SelectItem value="llama-3-70b-chat">LLaMA3 70b</SelectItem>
                 <SelectItem value="mistral-8x7b-instruct-v0.1">
                   Mistral 8x7B
                 </SelectItem>
+                <SelectItem value="gemma-7b-it">Gemma 7b</SelectItem>
               </SelectContent>
             </Select>
           </header>
@@ -236,12 +235,12 @@ export default function ChatBot() {
             {messages.length === 0 && (
               <div className="flex flex-col justify-center items-center space-y-6">
                 <Image
-                src="/visioneye.gif"
-                alt="Welcome"
-                width={150} // Set width as a prop
-                height={120} // Set height as a prop
-                className="text-black"
-            />
+                  src="/visioneye.gif"
+                  alt="Welcome"
+                  width={150} // Set width as a prop
+                  height={120} // Set height as a prop
+                  className="text-black"
+                />
                 <h1 className="text-3xl font-semibold">
                   How can I help you today?
                 </h1>
@@ -329,11 +328,6 @@ export default function ChatBot() {
         </main>
       </div>
       <Footer />
-      <TextIcon
-        className="text-black h-6 w-6 ml-4 mt-4 cursor-pointer hover:text-gray-400"
-        onClick={toggleSidebar}
-        title="Toggle sidebar"
-      />
     </>
   );
 }
