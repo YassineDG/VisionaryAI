@@ -83,7 +83,7 @@ export default function ChatBot() {
 
     try {
       const response = await axios.post(
-        "https://visionaryaibackend.onrender.com/api/chat/generate",
+        "https://visionaryaibackend-ngy0.onrender.com/api/chat/generate",
         backendPayload
       );
       const botResponseText = response.data;
