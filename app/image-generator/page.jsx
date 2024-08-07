@@ -28,7 +28,7 @@ import Footer from "@/components/footer";
 export default function ImageGeneratorPage() {
   const [prompt, setPrompt] = useState("");
   const [promptError, setPromptError] = useState("");
-  const [selectedModel, setSelectedModel] = useState("playground-v2");
+  const [selectedModel, setSelectedModel] = useState("flux-pro");
   const [selectedAspectRatio, setSelectedAspectRatio] = useState("1:1");
   const [imageUrl, setImageUrl] = useState("/placeholder.svg");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +42,7 @@ export default function ImageGeneratorPage() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://visionaryaibackend.onrender.com/api/images/generate",
+        "https://visionaryaibackend-ngy0.onrender.com/api/images/generate",
         {
           prompt,
           modelName: selectedModel,
@@ -175,14 +175,14 @@ export default function ImageGeneratorPage() {
                 value={selectedModel}
                 onValueChange={setSelectedModel}
               >
-                <DropdownMenuRadioItem value="playground-v2">
-                  Playground V2 (Default)
+                <DropdownMenuRadioItem value="flux-pro">
+                  flux-pro (Default)
                 </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="kandinsky-2.2">
-                  Kandinsky 2.2
+                <DropdownMenuRadioItem value="playground-v2.5">
+                  playground-v2.5
                 </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="dreamshaper-xl-turbo">
-                  Dreamshaper XL Turbo
+                <DropdownMenuRadioItem value="stable-diffusion-3">
+                  stable-diffusion-3
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
