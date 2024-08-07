@@ -28,7 +28,7 @@ import Footer from "@/components/footer";
 export default function ImageGeneratorPage() {
   const [prompt, setPrompt] = useState("");
   const [promptError, setPromptError] = useState("");
-  const [selectedModel, setSelectedModel] = useState("flux-pro");
+  const [selectedModel, setSelectedModel] = useState("playground-v2");
   const [selectedAspectRatio, setSelectedAspectRatio] = useState("1:1");
   const [imageUrl, setImageUrl] = useState("/placeholder.svg");
   const [isLoading, setIsLoading] = useState(false);
@@ -175,14 +175,14 @@ export default function ImageGeneratorPage() {
                 value={selectedModel}
                 onValueChange={setSelectedModel}
               >
-                <DropdownMenuRadioItem value="flux-pro">
-                  flux-pro (Default)
+                <DropdownMenuRadioItem value="playground-v2">
+                  Playground V2 (Default)
                 </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="playground-v2.5">
-                  playground-v2.5
+                <DropdownMenuRadioItem value="kandinsky-2.2">
+                  Kandinsky 2.2
                 </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="stable-diffusion-3">
-                  stable-diffusion-3
+                <DropdownMenuRadioItem value="dreamshaper-xl-turbo">
+                  Dreamshaper XL Turbo
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
