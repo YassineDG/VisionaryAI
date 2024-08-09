@@ -42,7 +42,7 @@ export default function ImageGeneratorPage() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://visionaryaibackend-ngy0.onrender.com/api/images/generate",
+        "https://visionary-ai-backend.vercel.app/api/images/generate",
         {
           prompt,
           modelName: selectedModel,
