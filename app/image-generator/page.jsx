@@ -181,8 +181,8 @@ export default function ImageGeneratorPage() {
                 <DropdownMenuRadioItem value="stable-diffusion-3">
                 stable-diffusion-3
                 </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="sdxl-lightning">
-                sdxl-lightning
+                <DropdownMenuRadioItem value="realistic">
+                Realistic (slow)
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
